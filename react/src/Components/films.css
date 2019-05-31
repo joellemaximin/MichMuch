@@ -42,4 +42,16 @@
 
 .card{
     background-color: #000!important;
+    margin-left: 36px;
+    margin-right: 36px;
+    color: #fff;
+    margin-bottom: 27px;
+}
+
+.pink{
+    background-color: rgb(189, 79, 103);
+}
+
+h4{
+    color:#fff;
 }

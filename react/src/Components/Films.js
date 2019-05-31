@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './films.css';
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {Carousel, Item, Caption, Dropdown, Divider } from 'react-bootstrap';
+import {Card, Button } from 'react-bootstrap';
 import Caarousel from './Caarousel';
 import Seances from './Seances';
 import Footer from './Footer';
@@ -51,41 +51,35 @@ class Films extends Component {
 
 
   render(){
-    console.log(this.state.film)
+    // console.log(this.state.film)
 
     return (
       <div className="film-wrapper">
         <Header/>
         <Caarousel/>
-          <div className="main container" className={''}>
-            <div className="movie-description col-lg-12 col-md-8">
+          <div className="main container">
+
+            <div className="movie-description row col-lg-12">
             {this.state.films.map((film, i)=>
-
-              <div key={i}>
-
-                <h3 id="movie-name">{film.movie_name}</h3>
-                <span id="movie-rate">{film.movie_rating}</span>
-                <span>
+            <Card  col="col-sm" key={i} style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={film.movie_image}/>
+              <Card.Body>
+                <Card.Title>{film.movie_name}</Card.Title>
                   <ul className="small-description">
                     <li id="time">
-                      {film.Hours}<small>min</small>
+                      {film.hours}<small>min</small>
                     </li>
-                    <li id="version-movie">
-                      <p>{film.version}</p>
+                    <li id="movie-rate">
+                      {film.movie_rating}
                     </li>
-                    <li id="type-movie">
-                      <p>{film.Version}</p>
-                    </li>
+      
                   </ul>
-                </span>
-              
-                <Dropdown.Divider />
-
-                <div className="big-description">
-                  <p id="descrip-movie">
-                  </p>
-                </div>
-              </div>
+                <Card.Text>
+                  {film.movie_synopsis}
+                </Card.Text>
+                <Button className="pink">Click Me :)</Button>
+              </Card.Body>
+            </Card>
             )}
 
               <div id="place-restants" className="text-center">

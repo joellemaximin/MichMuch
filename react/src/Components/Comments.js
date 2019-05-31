@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import Caards from './Caards';
 import {Image, Row, Col} from 'react-bootstrap';
 import './Commentaire.css';
-
+import Formulaire from './Formulaire';
 
 class Comments extends Component {
 
@@ -12,7 +12,10 @@ class Comments extends Component {
       super(props);
   
       this.state = {
-        comments: []
+        comments: [],
+        customer_name: "",
+        customer_phone_number: "",
+        movie_comment_description: ""
       };
     }
 
@@ -55,25 +58,27 @@ class Comments extends Component {
     return (
         <div className="container">
           <h3>{this.setState}</h3>
-            <button>
-              Ajouter votre avis
-            </button>
+            <Formulaire/>
             <div id="list-comments">{this.state.comments.map((comment, i) =>
               <div id="comment" key={i}>
                 <Row> 
-                  <Col xs={6} md={4}>
-                    <Image className="profile" src="./Images/flou.jpg" roundedCircle />
-                  </Col>
-                </Row>
-                <div className="okay">
+                  <Col xs={5}>
+                    <Image className="profile" src="./Images/flou.jpg"  />
                   
-                  <h3 id="name">{comment.customer_name}</h3> <span id="time"></span>
-                  <p id="body-comment">{comment.movie_comment_description}</p>
-                  <div className="blockButton">
-                    <button id="edit" type="button">Editer</button>
-                    <button id="delete" type="button">Supprimer</button>
+                  </Col>
+                  <Col>
+                  <div className="okay">
+                    <h3>{comment.movie_name}</h3>
+                    <h3 id="name">{comment.customer_name}</h3>
+                    <p id="body-comment">{comment.movie_comment_description}</p>
+{/* 
+                    <div className="blockButton">
+                      <button id="edit" type="button">Editer</button>
+                      <button id="delete" type="button">Supprimer</button>
+                    </div> */}
                   </div>
-                </div>
+                  </Col>>
+                </Row>
               </div>
               )};
             </div>
@@ -84,3 +89,4 @@ class Comments extends Component {
   
 
 export default Comments;
+  

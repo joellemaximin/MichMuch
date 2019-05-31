@@ -66,36 +66,57 @@ class AllFilms extends Component {
           <Header/>
           <div className="container">
             <h4>Cette semaine</h4>
-            <div className={''}>{this.state.films.map((film, i) =>
-              <div key={i}>
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={film.Image} />
+
+            <div className="movie-description row col-lg-12">
+              {this.state.films.map((film, i)=>
+              <Card  col="col-sm" key={i} style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={film.movie_image}/>
                 <Card.Body>
-                  <Card.Title> {film.movie_name}</Card.Title>
-                  <Card.Text>{film.movie_synopsis}</Card.Text>
-                  <Button onClick={this.handleClick}>Aller</Button>
+                  <Card.Title>{film.movie_name}</Card.Title>
+                    <ul className="small-description">
+                      <li id="time">
+                        {film.hours}<small>min</small>
+                      </li>
+                      <li id="movie-rate">
+                        {film.movie_rating}
+                      </li>
+        
+                    </ul>
+                  <Card.Text>
+                    {film.movie_synopsis}
+                  </Card.Text>
+                  <Button className="pink">Click Me :)</Button>
                 </Card.Body>
               </Card>
-              </div>
-            )}
-        
+              )}
+          
             </div>
 
               
 
             <h4>Films à ne pas rater: NEXT WEEK</h4>
             
-            <div>{this.state.datacome.map((x, i) =>
-              <div key={i}>                
-            
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={x.Image} />
-                  <Card.Body>
-                    <Card.Title>{x.title}</Card.Title>
-                    <Button onClick={this.handleClick}></Button>
-                  </Card.Body>
-                </Card>
-              </div>
+            <div className="movie-description row col-lg-12">
+            {this.state.films.map((film, i)=>
+            <Card  col="col-sm" key={i} style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={film.movie_image}/>
+              <Card.Body>
+                <Card.Title>{film.movie_name}</Card.Title>
+                  <ul className="small-description">
+                    <li id="time">
+                      {film.hours}<small>min</small>
+                    </li>
+                    <li id="movie-rate">
+                      {film.movie_rating}
+                    </li>
+      
+                  </ul>
+                <Card.Text>
+                  {film.movie_synopsis}
+                </Card.Text>
+                <Button className="pink">Click Me :)</Button>
+              </Card.Body>
+            </Card>
             )}
             </div>
          

@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
 	password: '1234',
-	database: 'cinema4'
+	database: 'cinema'
 });
 
 exports.connect = connection.connect(function(err){

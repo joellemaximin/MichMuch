@@ -1,5 +1,4 @@
 var Comments = require('../Models/ModelComment');
-var postComments = require('../Models/ModelpostComment');
 
 exports.displayAllComments = function(req, res){
 
@@ -10,14 +9,14 @@ exports.displayAllComments = function(req, res){
             res.json(data)
         }
 	});
-
-
 };	
 
 exports.postAllComments = function(req, res){
-	   console.log(JSON.stringify(req.body));
+	const Comments = new Comments(req.body);
+	
+	// console.log(JSON.stringify(req.body));
 
-       console.log('req.body.name', req.body['name']);
+       // console.log('req.body.name', req.body['name']);
     
     Comments.postComments(function(err, data){
 		if (err){

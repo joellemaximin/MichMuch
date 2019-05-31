@@ -1,6 +1,6 @@
 .profile{
     width: 50%;
-    border-radius: 20%;
+    border-radius: 5%;
 }
 
 #name, #time{
@@ -10,4 +10,21 @@
 .profile> .okay{
     display: flex;
     position: absolute;
+}
+
+#comment{
+    margin-top: 24px;
+    margin-bottom: 18px;
+    background-color: antiquewhite;
+    border-radius: 1.5%;
+}
+
+.okay{
+    padding-bottom: 12px;
+}
+
+.formulaire{
+    background-color: #ccc;
+    padding-bottom: 19px;
+    padding-top: 25px;
 }

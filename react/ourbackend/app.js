@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var filmsRouter = require('./routes/films');
 var commentsRouter = require('./routes/commentaires');
 var contactRouter = require('./routes/contact');
+var searchRouter = require('./routes/search');
+
 // var adminMovies = require('./routes/admin/adminMovies')
 var app = express();
 
@@ -31,6 +33,7 @@ app.use('/films', filmsRouter);
 app.use('/film/id', filmsRouter);
 app.use('/comments', commentsRouter);
 app.use('/contact', contactRouter);
+app.use('/search', searchRouter);
 
 // app.use('/adminlistMovies', adminMovies);
 // app.use('/addMovies', adminAddMovies);
@@ -38,7 +41,7 @@ app.use('/contact', contactRouter);
 // app.use('/addContacts', adminAddContacts);
 // app.use('/editContact', adminEditContacts);
 // app.use('/adminlistComments', adminComments);
-// app.use('/editContact', adminEditContacts);
+// app.use('/editContact ', adminEditContacts);
 // app.use('/editContact', adminEditContacts);
 
 
